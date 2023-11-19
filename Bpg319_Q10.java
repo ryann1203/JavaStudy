@@ -1,4 +1,4 @@
-import java.util.Scanner; // 고민해보았으나 미완성된 코드,,,
+import java.util.Scanner; 
 
 class Main {
 
@@ -21,9 +21,8 @@ class Main {
   public String get(String key){
       
         for(int i = 0; i < keyArray.length; i++){
-          if(keyArray[i].equals.key){
-            return valueArray[i];
-          }  
+          if (keyArray[i] != null && keyArray[i].equals(key)) {
+                return valueArray[i];
         }
         return null;
       
@@ -31,11 +30,11 @@ class Main {
 
   @Override
   public void put(String key, String value){
-      
       for(int i = 0; i < keyArray.length; i++){
-        keyArray[i] = key;
-        valueArray[i] = value;
-        return;
+        if (keyArray[i] == null || keyArray[i].equals(key)) {
+                keyArray[i] = key;
+                valueArray[i] = value;
+                return;
       }
     }
   };
